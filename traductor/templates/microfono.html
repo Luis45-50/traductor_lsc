@@ -1,0 +1,20 @@
+<h1>Traductor Voz → Imagen</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Hablar ahora</button>
+</form>
+
+<h3>Estado:</h3>
+<p>{{ estado }}</p>
+
+<h3>Texto detectado:</h3>
+<p>{{ texto }}</p>
+
+<h3>Imágenes encontradas:</h3>
+
+{% for img in imagenes %}
+    <div>
+        <img src="/media/{{ img }}" width="200">
+    </div>
+{% endfor %}
